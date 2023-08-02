@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.InputSystem;
+using System.Collections.Generic;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using Unity.VisualScripting;
 
 public class LongbowShoot : MonoBehaviour {
 
@@ -14,16 +14,38 @@ public class LongbowShoot : MonoBehaviour {
 	float power; // 화살이 얼마나 멀리 갈것인가
 	public float destroyTime = 10; // 화살 사라지는 시간 
 	public bool destroyArrows = false; // 화살이 사라졌는지 여부
-	public XRController controller = null;
+	/*public XRController controller = null;
+	private InputDevice targetDevice;
 
+	void Start()
+	{
+		List<InputDevice> devices = new List<InputDevice>();
+
+		InputDeviceCharacteristics rightControllerCharacteristicvs = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
+		InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristicvs, devices);
+
+		if (devices.Count > 0 )
+		{
+			targetDevice = devices[0];
+		}
+	}*/
   	void Update () {
-        
-		// vr 컨트롤러
-		/*if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool Abutton) {
+/*        targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
+		if (primaryButtonValue)
+		{
+			Debug.Log("plz play");
+		}
 
-		}*/
+        targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue);
+        if (triggerValue > 0.1f)
+        {
+            Debug.Log("plz play");
+        }
 
-        if (Input.GetMouseButtonDown(0)) {
+        // vr 컨트롤러*/
+
+
+		if (Input.GetMouseButtonDown(0)) {
 			// 소리 재생
 			GetComponent<AudioSource>().Stop();
 			GetComponent<AudioSource>().clip = drawSound;

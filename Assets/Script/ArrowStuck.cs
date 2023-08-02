@@ -73,4 +73,14 @@ public class ArrowStuck : MonoBehaviour {
 			}
 		}
 	}
+
+	IEnumerator HitCorotine()
+	{
+		if (hit.transform.tag == "Enemy")
+		{
+			// 사운드
+			/*hit.transform.GetComponent<Enemy>.*/
+		}
+		yield return null;
+	}
 }
