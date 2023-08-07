@@ -121,9 +121,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.1298927
-  m_Height: 3.130891
+  m_Height: 2.9086578
   m_Direction: 1
-  m_Center: {x: -0.13539025, y: 1.8447359, z: 0.4945021}
+  m_Center: {x: -0.13539025, y: 1.9558525, z: 0.4945021}
 --- !u!114 &1740558500029493769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +141,8 @@ MonoBehaviour:
   maxHealth: 10
   anim: {fileID: 6410985282167838901}
   nav: {fileID: 5719651723254222893}
+  nextMob: 01000000020000000400000005000000070000000a0000000b0000000d0000000f00000011000000120000001400000016000000180000001e000000
+  level: 1
 --- !u!195 &5719651723254222893
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -159,7 +161,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 3.37
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

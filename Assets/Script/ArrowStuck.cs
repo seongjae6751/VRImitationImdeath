@@ -79,7 +79,7 @@ public class ArrowStuck : MonoBehaviour {
 		if (hit.transform.tag == "Enemy")
 		{
 			// 사운드
-			/*hit.transform.GetComponent<Enemy>.*/
+			hit.transform.GetComponent<Enemy>().Damage(10, transform.position);
 		}
 		yield return null;
 	}

@@ -17508,7 +17508,7 @@ GameObject:
   - component: {fileID: 5246380061058354733}
   m_Layer: 0
   m_Name: Orc
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17581,9 +17581,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.6353196
-  m_Height: 2.1231885
+  m_Height: 2.0371373
   m_Direction: 1
-  m_Center: {x: -0.000000002521204, y: 1.0450674, z: 0.13532007}
+  m_Center: {x: -0.000000002521204, y: 1.0880936, z: 0.13532007}
 --- !u!114 &1056917334613232475
 MonoBehaviour:
   m_ObjectHideFlags: 0
