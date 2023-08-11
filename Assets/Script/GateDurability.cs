@@ -16,6 +16,10 @@ public class GateDurability : MonoBehaviour
     private void Update()
     {
         setCount = gateLoop.missingMob;
-        durabilityImage[10 - setCount].enabled = false;
+        if (setCount >= 1)
+        {
+            durabilityImage[10 - setCount].enabled = false;
+            GameObject.FindWithTag("Spawnser").GetComponent<Spawnser>().allMob -= setCount;
+        }
     }
 }

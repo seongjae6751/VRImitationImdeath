@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 6410985282167838900}
   - component: {fileID: 6410985282167838902}
   - component: {fileID: 1740558500029493769}
+  - component: {fileID: 1583435831100046678}
   - component: {fileID: 5719651723254222893}
   m_Layer: 0
   m_Name: Zombie
@@ -120,10 +121,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.1298927
+  m_Radius: 0.13890322
   m_Height: 2.9086578
   m_Direction: 1
-  m_Center: {x: -0.13539025, y: 1.9558525, z: 0.4945021}
+  m_Center: {x: -0.13539006, y: 1.9558525, z: 0.39}
 --- !u!114 &1740558500029493769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,10 +140,22 @@ MonoBehaviour:
   speed: 2
   health: 0
   maxHealth: 10
+  isLive: 1
   anim: {fileID: 6410985282167838901}
+--- !u!114 &1583435831100046678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410985282167838923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827fee70f8befb249a121ecd194ca1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1740558500029493769}
   nav: {fileID: 5719651723254222893}
-  nextMob: 01000000020000000400000005000000070000000a0000000b0000000d0000000f00000011000000120000001400000016000000180000001e000000
-  level: 1
 --- !u!195 &5719651723254222893
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ TagManager:
   - Arrow
   - Enemy
   - GateLoop
+  - Bell
+  - Spawnser
   layers:
   - Default
   - TransparentFX

@@ -15,14 +15,28 @@ public class ArrowStuck : MonoBehaviour {
 		else {
 			enabled = false;
 		}
-	}
+
+		// 적 화살에 맞으면 데미지 주기
+        if (hit.transform.tag == "Enemy")
+        {
+            // 사운드
+            hit.transform.GetComponent<Enemy>().Damage(10, transform.position);
+        }
+
+		// 벨을 치면 시작
+		if (hit.transform.tag == "Bell")
+		{
+			hit.transform.GetComponent<WaveStart>().SetWave();
+			Debug.Log("종이 땡땡땡");
+		}
+    }
 
 	void CheckForObstacles() {
 		// 레이캐스트의 길이는 화살보다 길어야 함
 		float myVelocity = GetComponent<Rigidbody>().velocity.magnitude;
 		// 화살표의 속도에 따라 레이캐스트의 길이 결정 / 이를 기반으로 화살은 속도가 너무 작으면 붙지 않음
 		float raycastLength = myVelocity * 0.03f;
-		
+
 		if(Physics.Raycast(transform.position, transform.forward, out hit, raycastLength)) {
 			GetComponent<AudioSource>().Stop();
 			GetComponent<AudioSource>().clip = hitSound;
@@ -30,11 +44,11 @@ public class ArrowStuck : MonoBehaviour {
 			
 			// 화살 맞으면 힘 추가
 			if(hit.transform.GetComponent<Rigidbody>()) {
-				hit.transform.GetComponent<Rigidbody>().AddForce(transform.forward * myVelocity * 10);
+                hit.transform.GetComponent<Rigidbody>().AddForce(transform.forward * myVelocity * 5);
 			}
-			
-			// 화살 콜라이더 비 활성화 시키기
-			GetComponent<BoxCollider>().enabled = false;
+
+            // 화살 콜라이더 비 활성화 시키기
+            GetComponent<BoxCollider>().enabled = false;
 			
 			// 리지드바디 고정
 			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
@@ -74,7 +88,7 @@ public class ArrowStuck : MonoBehaviour {
 		}
 	}
 
-	IEnumerator HitCorotine()
+/*	IEnumerator HitCorotine()
 	{
 		if (hit.transform.tag == "Enemy")
 		{
@@ -82,5 +96,5 @@ public class ArrowStuck : MonoBehaviour {
 			hit.transform.GetComponent<Enemy>().Damage(10, transform.position);
 		}
 		yield return null;
-	}
+	}*/
 }
