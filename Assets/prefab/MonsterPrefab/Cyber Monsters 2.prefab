@@ -1549,6 +1549,7 @@ GameObject:
   - component: {fileID: 8801057765837290363}
   - component: {fileID: 8898816272788315234}
   - component: {fileID: 8898816272788315235}
+  - component: {fileID: 5226231874762029836}
   - component: {fileID: 8940546426592767833}
   - component: {fileID: 9082458919684754633}
   m_Layer: 0
@@ -1628,6 +1629,21 @@ CapsuleCollider:
   m_Height: 1.7477688
   m_Direction: 1
   m_Center: {x: 0, y: 0.92485255, z: -0}
+--- !u!114 &5226231874762029836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895742072085981545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827fee70f8befb249a121ecd194ca1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 8940546426592767833}
+  nav: {fileID: 9082458919684754633}
+  tryOne: 0
 --- !u!114 &8940546426592767833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,8 +1659,9 @@ MonoBehaviour:
   speed: 2
   health: 30
   maxHealth: 30
+  isLive: 1
+  once: 1
   anim: {fileID: 8801057765837290363}
-  nav: {fileID: 9082458919684754633}
 --- !u!195 &9082458919684754633
 NavMeshAgent:
   m_ObjectHideFlags: 0

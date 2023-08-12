@@ -14,6 +14,7 @@ public class GateLoop : MonoBehaviour
         {
             Destroy(other.gameObject);
             CountMissing();
+            GameObject.FindWithTag("Spawnser").GetComponent<Spawnser>().allMob -= 1;
         }
     }
 
@@ -22,10 +23,4 @@ public class GateLoop : MonoBehaviour
     {
         missingMob++;
     }
-
-/*    // 
-    public int returnMissing()
-    {
-        return missingMob;
-    }*/
 }

@@ -13,7 +13,8 @@ public class Enemy : MonoBehaviour
     public float health; // 현재 체력
     public float maxHealth; // 스폰시 체력
     public bool isLive = true; // 살아있는지 여부
-    
+    public bool once = true;
+
     [SerializeField] private Animator anim;
     
 
@@ -25,9 +26,10 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && once)
         {
             Dead();
+            once = false;
         }
     }
 
@@ -53,11 +55,10 @@ public class Enemy : MonoBehaviour
     // 죽으면 애니메이션 재생 및 파괴
     private void Dead()
     {
+        GameObject.FindWithTag("Spawnser").GetComponent<Spawnser>().allMob -= 1;
         anim.SetTrigger("Dead");
         Destroy(gameObject, 4f);
-        // gameObject.SetActive(false);
         isLive = false;
-        GameObject.FindWithTag("Spawnser").GetComponent<Spawnser>().allMob--;
     }
 }
 

@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 3277112548783263161}
   - component: {fileID: 3277112548783263167}
   - component: {fileID: 8792808121499578460}
+  - component: {fileID: 770076615799801052}
   - component: {fileID: 5132617166141407400}
   m_Layer: 0
   m_Name: BugMon
@@ -458,8 +459,24 @@ MonoBehaviour:
   speed: 2
   health: 0
   maxHealth: 10
+  isLive: 1
+  once: 1
   anim: {fileID: 3277112548783263160}
+--- !u!114 &770076615799801052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2760626919301563297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827fee70f8befb249a121ecd194ca1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 8792808121499578460}
   nav: {fileID: 5132617166141407400}
+  tryOne: 0
 --- !u!195 &5132617166141407400
 NavMeshAgent:
   m_ObjectHideFlags: 0

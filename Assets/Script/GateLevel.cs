@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GateLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int gateLevel = 0; // 게이트 레벨
+    public bool tryOnce = true;
+
+    [SerializeField]
+    Spawnser spawnser;
+
+    [SerializeField]
+    private Text level;
+
+    private void Update()
     {
-        
+        if (spawnser.allMob == 0 && tryOnce)
+        {
+            gateLevel++;
+            checkLevel();
+            tryOnce = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void checkLevel()
     {
-        
+        level.text = "Wave" + gateLevel.ToString();
     }
 }

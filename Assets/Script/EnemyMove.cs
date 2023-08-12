@@ -9,10 +9,9 @@ public class EnemyMove : MonoBehaviour
     Enemy enemy;
     [SerializeField]
     public NavMeshAgent nav;
-    public bool tryOne;
 
     Vector3 destination = new Vector3(-14.527f, 31.433f, -28.151f); // 목적지(게이트 위치)
-    // Start is called before the first frame update
+
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
@@ -20,13 +19,11 @@ public class EnemyMove : MonoBehaviour
         nav.speed = enemy.speed;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!GameObject.FindWithTag("Spawnser").GetComponent<Spawnser>().tryOnce)
+        if (!GameObject.FindWithTag("Spawnser").GetComponent<Spawnser>().setNav)
         {
             nav.enabled = true;
-            tryOne = false;
         }
         if (enemy.isLive)
         {

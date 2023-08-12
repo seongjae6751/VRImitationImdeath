@@ -17505,6 +17505,7 @@ GameObject:
   - component: {fileID: 2947393510748634720}
   - component: {fileID: 3238850126507995935}
   - component: {fileID: 1056917334613232475}
+  - component: {fileID: 8323291373432092739}
   - component: {fileID: 5246380061058354733}
   m_Layer: 0
   m_Name: Orc
@@ -17599,8 +17600,24 @@ MonoBehaviour:
   speed: 1
   health: 0
   maxHealth: 50
+  isLive: 1
+  once: 1
   anim: {fileID: 3294323589954251236}
+--- !u!114 &8323291373432092739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3235823052156939646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827fee70f8befb249a121ecd194ca1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1056917334613232475}
   nav: {fileID: 5246380061058354733}
+  tryOne: 0
 --- !u!195 &5246380061058354733
 NavMeshAgent:
   m_ObjectHideFlags: 0

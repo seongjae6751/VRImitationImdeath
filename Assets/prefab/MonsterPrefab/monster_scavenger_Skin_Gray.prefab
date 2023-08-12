@@ -829,6 +829,7 @@ GameObject:
   - component: {fileID: 4797584637558157201}
   - component: {fileID: 4797584637558157203}
   - component: {fileID: 1233731532831545645}
+  - component: {fileID: 4870784569026018746}
   - component: {fileID: -1102426847588296256}
   m_Layer: 0
   m_Name: monster_scavenger_Skin_Gray
@@ -923,8 +924,24 @@ MonoBehaviour:
   speed: 4
   health: 0
   maxHealth: 10
+  isLive: 1
+  once: 1
   anim: {fileID: 4797584637558157200}
+--- !u!114 &4870784569026018746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5323150734357050676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827fee70f8befb249a121ecd194ca1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1233731532831545645}
   nav: {fileID: -1102426847588296256}
+  tryOne: 0
 --- !u!195 &-1102426847588296256
 NavMeshAgent:
   m_ObjectHideFlags: 0

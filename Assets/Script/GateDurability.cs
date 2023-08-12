@@ -6,20 +6,18 @@ using UnityEngine.UI;
 public class GateDurability : MonoBehaviour
 {
     [SerializeField]
-    public Image[] durabilityImage;
+    public Image[] durabilityImage; // 게이트 내구도
 
     [SerializeField]
-    GateLoop gateLoop;
-    public int setCount;
+    GateLoop gateLoop; 
+    public int setCount; // 게이트에 들어간 몬스터
 
-    // Update is called once per frame
     private void Update()
     {
-        setCount = gateLoop.missingMob;
+        setCount = gateLoop.missingMob; // 게이트에 들어가는 몬스터
         if (setCount >= 1)
         {
-            durabilityImage[10 - setCount].enabled = false;
-            GameObject.FindWithTag("Spawnser").GetComponent<Spawnser>().allMob -= setCount;
+            durabilityImage[10 - setCount].enabled = false; // 게이트에 들어가는 몬스터 수를 인덱스로 갖는 내구도 이미지 비활성화
         }
     }
 }

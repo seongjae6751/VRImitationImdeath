@@ -18,12 +18,18 @@ public class Spawnser : MonoBehaviour
     public int level = 1; // 스테이지 레벨
     private System.Random random;
     private int randomNumber;
-    public bool tryOnce = true; // nav mesh 오류로 인한 컨트롤
-    bool isLive = true; // 살아있는지 여부
-    public int allMob;
+    public bool setNav = true; // nav mesh 오류로 인한 컨트롤
+    public bool trySecond = false;
+    private int mobNum = 0; // 몬스터 선택 범위
+    private int setMob;
+    private int waveLevel;
+    public int allMob = 1; // 처음부터 아이템이 활성화 되는거 방지(아이템은 0이 되어야 보임)
 
     [SerializeField]
     WaveStart wavestart;
+
+    [SerializeField]
+    GateLevel gatelevel;
 
     Vector3 RoofWay = new Vector3(-45.010f, 36.7426f, 11.56856f);
     Vector3 Far = new Vector3(4.01f, 41.3326f, 19.27856f);
@@ -44,15 +50,13 @@ public class Spawnser : MonoBehaviour
 
     private void Update()
     {
-        if (tryOnce && wavestart.waving)
+        SelectMob(gatelevel.gateLevel);
+        if (wavestart.waving)
         {
-            Spawn();
-            tryOnce = false;
-        }
-
-        if (allMob == 0)
-        {
-            // 아이템 선택
+            waveLevel = gatelevel.gateLevel;
+            Spawn(waveLevel);
+            wavestart.waving = false;
+            setNav = false;
         }
     }
 
@@ -69,31 +73,40 @@ public class Spawnser : MonoBehaviour
         spawnPoint.Add(Underground);
     }
 
-    public void Spawn()
+    private void SelectMob(int _selmob)
     {
-        allMob = nextMob[3];
-        for (int i = 0; i < nextMob[3]; i++)
+        if (_selmob < 3)
+        {
+            mobNum = 0;
+        }
+        else if (_selmob < 6)
+        {
+            mobNum = 1;
+        }
+        else if (_selmob < 9)
+        {
+            mobNum = 2;
+        }
+        else if (_selmob < 12)
+        {
+            mobNum = 3;
+        }
+        else if (_selmob < 15)
+        {
+            mobNum = 4;
+        }
+    }
+
+    public void Spawn(int wave)
+    {
+        for (int i = 1; i < nextMob[wave]; i++)
         {
             int seed = System.DateTime.Now.Millisecond;
             random = new System.Random(seed);
             randomNumber = random.Next(0, 8);
-            GameObject enemy = GameManager.Instance.pool.Get(0);
+            setMob = UnityEngine.Random.Range(0, mobNum);
+            GameObject enemy = GameManager.Instance.pool.Get(setMob);
             enemy.transform.position = spawnPoint[randomNumber];
-            // enemy.GetComponent<Enemy>().Init(spawnData[level]);
         }
     }
-
-    public void SetBool()
-    {
-        tryOnce = false;
-    }
 }
-
-/*[System.Serializable]
-public class SpawnData
-{
-    public int spawnTime;
-    public int health;
-    public float speed;
-}
-*/
