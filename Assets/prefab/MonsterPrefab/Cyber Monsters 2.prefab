@@ -1643,7 +1643,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 8940546426592767833}
   nav: {fileID: 9082458919684754633}
-  tryOne: 0
 --- !u!114 &8940546426592767833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,7 +1655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db2a49f0ea36204baafa88ee3f47a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
   health: 30
   maxHealth: 30
   isLive: 1

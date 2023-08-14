@@ -13,7 +13,10 @@ public class ItemSet : MonoBehaviour
     [SerializeField]
     WaveStart waveStart;
 
-    private bool itemActive = true;
+    [SerializeField]
+    GateLevel gatelevel;
+
+    public bool itemActive = true;
 
     // Update is called once per frame
     void Update()
@@ -21,12 +24,14 @@ public class ItemSet : MonoBehaviour
         if (spawnser.allMob == 0 && itemActive)
         {
             itemSet.SetActive(true);
-        }
-
-        if (waveStart.waving)
-        {
-            itemSet.SetActive(false);
             itemActive = false;
+            gatelevel.GateLevelUp();
+            gatelevel.CheckLevel();
         }
+    }
+
+    public void SetItem()
+    {
+        itemSet.SetActive(false);
     }
 }

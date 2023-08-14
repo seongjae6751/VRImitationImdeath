@@ -921,7 +921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db2a49f0ea36204baafa88ee3f47a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 2
   health: 0
   maxHealth: 10
   isLive: 1
@@ -941,7 +941,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1233731532831545645}
   nav: {fileID: -1102426847588296256}
-  tryOne: 0
 --- !u!195 &-1102426847588296256
 NavMeshAgent:
   m_ObjectHideFlags: 0

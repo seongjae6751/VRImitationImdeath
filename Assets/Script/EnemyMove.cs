@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -28,6 +29,10 @@ public class EnemyMove : MonoBehaviour
         if (enemy.isLive)
         {
             Move();
+        }
+        if (!enemy.isLive) // Á×À¸¸é ³»ºñ ¸Þ½Ã ²ô±â
+        {
+            nav.enabled = false;
         }
     }
     public void SetBool(bool _nav)

@@ -31,6 +31,9 @@ public class Spawnser : MonoBehaviour
     [SerializeField]
     GateLevel gatelevel;
 
+    [SerializeField]
+    ItemSet itemset;
+
     Vector3 RoofWay = new Vector3(-45.010f, 36.7426f, 11.56856f);
     Vector3 Far = new Vector3(4.01f, 41.3326f, 19.27856f);
     Vector3 Temple1Left = new Vector3(-7.004f, 36.549f, 8.2085f);
@@ -53,10 +56,11 @@ public class Spawnser : MonoBehaviour
         SelectMob(gatelevel.gateLevel);
         if (wavestart.waving)
         {
-            waveLevel = gatelevel.gateLevel;
+            waveLevel = gatelevel.gateLevel - 1; // 게이트 레벨은 1부터 시작하므로 리스트 인덱스 0과 맞추기 위함
             Spawn(waveLevel);
             wavestart.waving = false;
             setNav = false;
+            GameObject.FindWithTag("Set").GetComponent<ItemSet>().SetItem();
         }
     }
 
@@ -75,31 +79,14 @@ public class Spawnser : MonoBehaviour
 
     private void SelectMob(int _selmob)
     {
-        if (_selmob < 3)
-        {
-            mobNum = 0;
-        }
-        else if (_selmob < 6)
-        {
-            mobNum = 1;
-        }
-        else if (_selmob < 9)
-        {
-            mobNum = 2;
-        }
-        else if (_selmob < 12)
-        {
-            mobNum = 3;
-        }
-        else if (_selmob < 15)
-        {
-            mobNum = 4;
-        }
+        mobNum = (_selmob / 3) + 1;
     }
 
     public void Spawn(int wave)
     {
-        for (int i = 1; i < nextMob[wave]; i++)
+        allMob = nextMob[wave];
+        itemset.itemActive = true;
+        for (int i = 0; i < nextMob[wave]; i++)
         {
             int seed = System.DateTime.Now.Millisecond;
             random = new System.Random(seed);

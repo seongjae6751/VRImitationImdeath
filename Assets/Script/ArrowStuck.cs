@@ -8,27 +8,28 @@ public class ArrowStuck : MonoBehaviour {
 
 	
 	void Update () {
+
 		// 화살이 움직일 때 장애물이 있는지 체크
-		if(GetComponent<Rigidbody>().velocity.magnitude > 0.5) {
+        if (GetComponent<Rigidbody>().velocity.magnitude > 0.5) {
 			CheckForObstacles();
 		}
 		else {
 			enabled = false;
 		}
 
-		// 적 화살에 맞으면 데미지 주기
+        // 벨을 치면 시작
+        if (hit.transform.tag == "Bell")
+        {
+            hit.transform.GetComponent<WaveStart>().SetWave();
+            Debug.Log("종이 땡땡땡");
+        }
+
+        // 적 화살에 맞으면 데미지 주기
         if (hit.transform.tag == "Enemy")
         {
             // 사운드
             hit.transform.GetComponent<Enemy>().Damage(10, transform.position);
         }
-
-		// 벨을 치면 시작
-		if (hit.transform.tag == "Bell")
-		{
-			hit.transform.GetComponent<WaveStart>().SetWave();
-			Debug.Log("종이 땡땡땡");
-		}
     }
 
 	void CheckForObstacles() {
@@ -41,6 +42,7 @@ public class ArrowStuck : MonoBehaviour {
 			GetComponent<AudioSource>().Stop();
 			GetComponent<AudioSource>().clip = hitSound;
 			GetComponent<AudioSource>().Play();
+			Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward * hit.distance, Color.blue);
 			
 			// 화살 맞으면 힘 추가
 			if(hit.transform.GetComponent<Rigidbody>()) {

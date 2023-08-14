@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5497092}
   - component: {fileID: 11412130}
   - component: {fileID: 8281110}
-  - component: {fileID: 6570194}
+  - component: {fileID: 2080277504215248906}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -32,6 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,10 +56,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -83,6 +86,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &5497092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -208,7 +212,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &6570194
+--- !u!65 &2080277504215248906
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,5 +223,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.07653652, y: 0.06629772, z: 1.0900346}
-  m_Center: {x: -0.000008819625, y: -0.01012575, z: -0.010243714}
+  m_Size: {x: 0.016336165, y: 0.017229933, z: 1.1007943}
+  m_Center: {x: 0.0002338253, y: 0.0019893292, z: 0.0024147928}

@@ -14,17 +14,12 @@ public class GateLevel : MonoBehaviour
     [SerializeField]
     private Text level;
 
-    private void Update()
+    public void GateLevelUp()
     {
-        if (spawnser.allMob == 0 && tryOnce)
-        {
-            gateLevel++;
-            checkLevel();
-            tryOnce = false;
-        }
+        gateLevel++;
     }
 
-    private void checkLevel()
+    public void CheckLevel()
     {
         level.text = "Wave" + gateLevel.ToString();
     }

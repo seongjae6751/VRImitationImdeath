@@ -9,6 +9,8 @@ TagManager:
   - GateLoop
   - Bell
   - Spawnser
+  - Item
+  - Set
   layers:
   - Default
   - TransparentFX
