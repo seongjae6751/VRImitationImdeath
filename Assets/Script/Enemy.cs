@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public float maxHealth; // 스폰시 체력
     public bool isLive = true; // 살아있는지 여부
     public bool once = true;
+    public int bodyValue;
 
     [SerializeField] private Animator anim;
     
@@ -26,7 +27,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (health <= 0 && once)
+        if (health <= 0 && once) // 중복으로 현재 몬스터 수가 주는 것을 방지
         {
             Dead();
             once = false;
@@ -56,6 +57,7 @@ public class Enemy : MonoBehaviour
     private void Dead()
     {
         GameObject.FindWithTag("Spawnser").GetComponent<Spawnser>().allMob -= 1;
+        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().AddGold(bodyValue);
         anim.SetTrigger("Dead");
         Destroy(gameObject, 4f);
         isLive = false;

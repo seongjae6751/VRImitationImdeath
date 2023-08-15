@@ -17,7 +17,7 @@ public class ArrowStuck : MonoBehaviour {
 			enabled = false;
 		}
 
-        // 벨을 치면 시작
+        // 종을 치면 웨이브 시작
         if (hit.transform.tag == "Bell")
         {
             hit.transform.GetComponent<WaveStart>().SetWave();

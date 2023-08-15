@@ -1660,6 +1660,7 @@ MonoBehaviour:
   maxHealth: 30
   isLive: 1
   once: 1
+  bodyValue: 300
   anim: {fileID: 8801057765837290363}
 --- !u!195 &9082458919684754633
 NavMeshAgent:

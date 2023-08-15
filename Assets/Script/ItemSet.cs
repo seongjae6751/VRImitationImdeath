@@ -27,6 +27,7 @@ public class ItemSet : MonoBehaviour
             itemActive = false;
             gatelevel.GateLevelUp();
             gatelevel.CheckLevel();
+            spawnser.gameProgress = true;
         }
     }
 

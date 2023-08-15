@@ -23,6 +23,7 @@ public class Spawnser : MonoBehaviour
     private int mobNum = 0; // 몬스터 선택 범위
     private int setMob;
     private int waveLevel;
+    public bool gameProgress = true; // 게임 진행 중인지 여부(게임 중 중복 스폰을 방지하기 위함)
     public int allMob = 1; // 처음부터 아이템이 활성화 되는거 방지(아이템은 0이 되어야 보임)
 
     [SerializeField]
@@ -54,13 +55,14 @@ public class Spawnser : MonoBehaviour
     private void Update()
     {
         SelectMob(gatelevel.gateLevel);
-        if (wavestart.waving)
+        if (wavestart.waving && gameProgress)
         {
+            GameObject.FindWithTag("Set").GetComponent<ItemSet>().SetItem();
             waveLevel = gatelevel.gateLevel - 1; // 게이트 레벨은 1부터 시작하므로 리스트 인덱스 0과 맞추기 위함
             Spawn(waveLevel);
             wavestart.waving = false;
             setNav = false;
-            GameObject.FindWithTag("Set").GetComponent<ItemSet>().SetItem();
+            gameProgress = false;
         }
     }
 

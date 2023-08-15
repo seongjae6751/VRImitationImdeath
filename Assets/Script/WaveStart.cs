@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class WaveStart : MonoBehaviour
 {
+    [SerializeField]
+    Spawnser spawnser;
+
     public bool waving = false;
-    
+
     public void SetWave()
     {
-        waving = true;
+        if (!spawnser.gameProgress)
+        {
+            waving = true;
+        }
     }
 }

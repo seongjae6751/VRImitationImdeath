@@ -11,6 +11,7 @@ TagManager:
   - Spawnser
   - Item
   - Set
+  - GameManager
   layers:
   - Default
   - TransparentFX

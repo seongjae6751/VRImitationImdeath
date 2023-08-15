@@ -8,8 +8,16 @@ public class GameManager : MonoBehaviour
 
     public PoolManager pool;
 
+    public int nowGold = 0;
+
     private void Awake()
     {
         Instance = this;
     }
+
+    public void AddGold(int _cash)
+    {
+        nowGold += _cash;
+    }
+
 }

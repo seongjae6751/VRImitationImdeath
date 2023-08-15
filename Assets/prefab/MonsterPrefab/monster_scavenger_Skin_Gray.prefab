@@ -926,6 +926,7 @@ MonoBehaviour:
   maxHealth: 10
   isLive: 1
   once: 1
+  bodyValue: 400
   anim: {fileID: 4797584637558157200}
 --- !u!114 &4870784569026018746
 MonoBehaviour:
