@@ -15,8 +15,10 @@ public class PurchaseAvailable : MonoBehaviour
     [SerializeField]
     Text minePrice;
 
+    // 양의 피 가격
     public int item1BloodPrice = 1000;
-
+    
+    // 지뢰 가격
     public int item2MinePrice = 2500;
 
     private void Update()
@@ -25,7 +27,7 @@ public class PurchaseAvailable : MonoBehaviour
         CheckMineColor();
     }
 
-    private void CheckBloodColor()
+    private void CheckBloodColor() // 양의 피 살 수 없으면 빨간색, 있으면 흰색 표시
     {
         if (goldInfo.gold < item1BloodPrice)
         {
@@ -37,7 +39,7 @@ public class PurchaseAvailable : MonoBehaviour
         }
     }
 
-    private void CheckMineColor()
+    private void CheckMineColor() // 지뢰 살 수 없으면 빨간색, 있으면 흰색 표시
     {
         if (goldInfo.gold < item2MinePrice)
         {

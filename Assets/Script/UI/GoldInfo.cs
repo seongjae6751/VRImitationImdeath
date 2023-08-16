@@ -15,11 +15,11 @@ public class GoldInfo : MonoBehaviour
 
     private void Update()
     {
-        gold = gameManager.nowGold;
+        gold = gameManager.nowGold; // 골드창은 비활성화 되었다가 켜지므로 항상 활성화인 게임 매니저한테 골드 정보를 받아옴
         CheckGold();
     }
 
-    public void CheckGold()
+    public void CheckGold() // 현재 골드 표시
     {
         goldReserves.text =  gold.ToString();
     }

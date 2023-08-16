@@ -16,26 +16,26 @@ public class EnemyMove : MonoBehaviour
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
-        nav.enabled = false;
+        nav.enabled = false; // 몬스터 스폰 전에 내비 매시를 꺼야 함(setDestination함수를 위함)
         nav.speed = enemy.speed;
     }
 
     void Update()
     {
-        if (!GameObject.FindWithTag("Spawnser").GetComponent<Spawnser>().setNav)
+        if (!GameObject.FindWithTag("Spawnser").GetComponent<Spawnser>().setNav) // 스폰 되었는지 확인
         {
-            nav.enabled = true;
+            nav.enabled = true; // 스폰 되었으면 내비 메시 다시 켬
         }
         if (enemy.isLive)
         {
-            Move();
+            Move(); // 살아있으면 움직이게 함
         }
-        if (!enemy.isLive) // 죽으면 내비 메시 끄기
+        if (!enemy.isLive) 
         {
-            nav.enabled = false;
+            nav.enabled = false; // 몹 죽으면 내비 메시 끔
         }
     }
-    public void SetBool(bool _nav)
+/*    public void SetBool(bool _nav)
     {
         nav.enabled = _nav;
     }
@@ -43,10 +43,10 @@ public class EnemyMove : MonoBehaviour
     public void SetNav(bool _nav)
     {
         nav.enabled = _nav;
-    }
+    }*/
 
-    private void Move()
+    private void Move() 
     {
-        nav.SetDestination(destination);
+        nav.SetDestination(destination); // 목적지까지 이동
     }
 }
