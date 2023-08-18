@@ -37,8 +37,8 @@ public class Spawnser : MonoBehaviour
     Vector3 Invisible = new Vector3(37.065f, 40.047f, -10.661f);
     Vector3 Temple2Left = new Vector3(33.785f, 34.082f, -10.631f);
     Vector3 Temple2Middle = new Vector3(34.945f, 34.065f, -14.291f);
-    Vector3 Temple2Right = new Vector3(37.145f, 34.067f, -17.731f);
-    Vector3 Underground = new Vector3(34.715f, 25.327f, -19.851f);
+    Vector3 Temple2Right = new Vector3(38.26f, 34.067f, -17.731f);
+    Vector3 Underground = new Vector3(34.715f, 34.06f, -21.29f);
 
 
     void Awake()

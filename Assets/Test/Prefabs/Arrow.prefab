@@ -363,7 +363,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   speed: 1500
-  destroyTime: 10
+  destroyTime: 13
   shootSound: {fileID: 8300000, guid: 7d138406deb428c48a2bafc02fe05bf1, type: 3}
 --- !u!114 &6072647748450659436
 MonoBehaviour:
