@@ -14,36 +14,8 @@ public class LongbowShoot : MonoBehaviour {
 	float power; // 화살이 얼마나 멀리 갈것인가
 	public float destroyTime = 10; // 화살 사라지는 시간 
 	public bool destroyArrows = false; // 화살이 사라졌는지 여부
-	/*public XRController controller = null;
-	private InputDevice targetDevice;
 
-	void Start()
-	{
-		List<InputDevice> devices = new List<InputDevice>();
-
-		InputDeviceCharacteristics rightControllerCharacteristicvs = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-		InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristicvs, devices);
-
-		if (devices.Count > 0 )
-		{
-			targetDevice = devices[0];
-		}
-	}*/
   	void Update () {
-/*        targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
-		if (primaryButtonValue)
-		{
-			Debug.Log("plz play");
-		}
-
-        targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue);
-        if (triggerValue > 0.1f)
-        {
-            Debug.Log("plz play");
-        }
-
-        // vr 컨트롤러*/
-
 
 		if (Input.GetMouseButtonDown(0)) {
 			// 소리 재생

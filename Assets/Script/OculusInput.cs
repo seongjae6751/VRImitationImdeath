@@ -34,5 +34,13 @@ public class OculusInput : MonoBehaviour
         {
             Debug.Log("plz play");
         }
+
+        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool AButton))
+        {
+            if (AButton == true)
+            {
+                Debug.Log("Abutton ´­¸²");
+            }
+        }
     }
 }
