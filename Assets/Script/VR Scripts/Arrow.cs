@@ -5,9 +5,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Arrow : XRGrabInteractable
 {
 
-    [SerializeField] private float speed = 2000.0f;
-    [SerializeField] private int destroyTime;
-    public AudioClip shootSound;
+    [SerializeField] private float speed = 2000.0f; // 화살 속도
+    [SerializeField] private int destroyTime; // 붕괴 시간
+    public AudioClip shootSound; // 날라가는 소리
 
     private new Rigidbody rigidbody;
     private ArrowCaster caster;
@@ -46,7 +46,7 @@ public class Arrow : XRGrabInteractable
 
     private IEnumerator LaunchRoutine()
     {
-        // Set direction while flying
+        // 날라가는 동안 방향 설정
         while (!caster.CheckForCollision(out hit))
         {
             GetComponent<AudioSource>().Stop();
@@ -58,7 +58,7 @@ public class Arrow : XRGrabInteractable
             yield return null;
         }
 
-        // Once the arrow has stopped flying
+        // 화살이 나는것을 멈췄을 때
         DisablePhysics();
         ChildArrow(hit);
         CheckForHittable(hit);

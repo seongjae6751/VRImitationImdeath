@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ArrowCaster : MonoBehaviour
 {
-    [SerializeField] private Transform tip;
-    [SerializeField] private LayerMask layerMask = ~0;
+    [SerializeField] private Transform tip; // 화살촉
+    [SerializeField] private LayerMask layerMask = ~0; // 모든 레이어와 상호 작용 허용
 
     private Vector3 lastPosition = Vector3.zero;
 
